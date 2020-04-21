@@ -14,7 +14,7 @@
     <![endif]-->
   </head>
 <body>
-    <header class="navbar navbar-inverse fixed-top navbar-dark bg-dark">
+    <header class="navbar navbar-inverse fixed-top navbar-dark bg-dark"> <!-- navbar-inverse не работа, але може потом десь йому стилі бутуть -->
       <div class="container">
         <%= link_to "V Tanke", 'home', id: "logo" %>
         <nav>
@@ -28,7 +28,8 @@
         </nav>
       </div>
     </header>
-    <!-- ======================== end of header ========================= -->
+  <!-- ======================== end of header ========================= -->
+
     <div class="container">
       <%= yield %>
     </div>
