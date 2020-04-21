@@ -1,10 +1,13 @@
-<div class="container">
-  <div class="mx-auto" style="width: 200px;">
+<div> <!-- цього div-container немає в книжці -->
+  <div class="center jumbotron"> <!--old classes: mx-auto" style="width: 500px; -->
     <h1>V Barake</h1>
     <p>This is page for tankists!</p>
 
-  <!--   <%# <%= image_pack_tag 'rootkit-omg.jpg' %> %> kartinka -->
   <%= link_to "Sign up now!", '#', class: "btn btn-lg btn-primary" %>
-  
+  <br>
+  <%= link_to image_pack_tag("rails-logo.svg.png", alt: "Rails logo", width: "300px"),
+              'http://rubyonrails.org/' %>
+
+<!--   <%= image_pack_tag 'rails-logo.svg.png' %>  -->
   </div>
 </div>
