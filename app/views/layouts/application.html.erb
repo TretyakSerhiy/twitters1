@@ -7,32 +7,13 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-    <!--[if lt IE 9]>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
-      </script>
-    <![endif]-->
+    <%= render 'layouts/shim' %>
   </head>
 <body>
-    <header class="navbar navbar-inverse fixed-top navbar-dark bg-dark"> <!-- navbar-inverse не работа, але може потом десь йому стилі бутуть -->
-      <div class="container">
-        <%= link_to "V Tanke", 'home', id: "logo" %>
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <div class="d-flex"> <!-- це щоб лішки були в рядок, а не стовпчик -->
-              <li class="paddlft"><%= link_to "Home",   'home' %></li>
-              <li class="paddlft"><%= link_to "Help",   'help' %></li>
-              <li class="paddlft"><%= link_to "Log in", '#' %></li>
-            </div>
-          </ul>
-        </nav>
-      </div>
-    </header>
-  <!-- ======================== end of header ========================= -->
-
+  <%= render 'layouts/header' %>
     <div class="container">
       <%= yield %>
     </div>
-
+    <%= render 'layouts/footer' %> 
 </body>
 </html>
