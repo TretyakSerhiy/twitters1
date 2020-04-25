@@ -1,8 +1,8 @@
   <% provide(:title, 'Sign up') %>
   <h1>Sign up</h1>
-
+<div class="container center">
   <div class="row">
-    <div class="col-md-6 col-vd-offset-3">
+    <div class="col-md-6 col-vd-offset-3 mx-auto"> <!-- mx-auto added -->
       <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages' %>
 
@@ -22,3 +22,4 @@
       <% end %>
     </div>
   </div>
+</div>
