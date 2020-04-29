@@ -1,9 +1,11 @@
 <div class="center jumbotron"> <!--old classes: mx-auto" style="width: 500px; -->
   <h1>V Barake</h1>
     <p>This is page for tankists!</p>
-    <%= link_to "Sign up now!", 'signup', class: "btn btn-lg btn-primary" %>
-    <br>
-    <%= link_to image_pack_tag("tank-svgrepo-com.svg", alt: "Rails logo", width: "280px"),
-              'https://worldoftanks.ru' %>
-
+    <% if user_signed_in? %>
+    <span>Hello, tankist <%= current_user.email %></span>
+    <% else %>
+    <%= link_to 'Sign up', new_user_registration_path %>
+    <% end %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 </div>
