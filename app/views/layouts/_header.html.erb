@@ -15,8 +15,8 @@
                 Account <b class="caret"></b>
               </a>
               <ul class="dropdown-menu bg-dark">
-                <li class="paddlft"><%= link_to "Profile", current_user %></li>
-                <li class="paddlft"><%= link_to "Settings", edit_user_path(current_user) %></li>
+                <li class="paddlft"><%= link_to "Profile" %></li>
+                <li class="paddlft"><%= link_to "Settings", edit_user_registration_path %></li>
                 <li class="divider"></li>
                 <li class="paddlft">
                   <%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
@@ -24,7 +24,7 @@
               </ul>
             </li>
           <% else %>
-            <li class="paddlft"><%= link_to "Log in", new_user_registration_path %></li>
+            <li class="paddlft"><%= link_to "Sign in", new_user_session_path %></li>
           <% end %>
         </div>
       </ul>

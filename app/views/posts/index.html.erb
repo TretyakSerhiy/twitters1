@@ -1,0 +1,17 @@
+<h1>Posts <% current_user %></h1>
+<%= link_to 'New post', new_post_path %>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th></th>
+  </tr>
+
+  <% @articles.each do |article| %>
+    <tr>
+      <td><%= post.title %></td>
+      <td><%= post.text %></td>
+      <td><%= link_to 'Show', post_path(article) %></td>
+    </tr>
+  <% end %>
+</table>

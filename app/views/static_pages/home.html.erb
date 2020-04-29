@@ -2,7 +2,12 @@
   <h1>V Barake</h1>
     <p>This is page for tankists!</p>
     <% if user_signed_in? %>
-    <span>Hello, tankist <%= current_user.email %></span>
+    <div>
+      <p>Hello, tankist <%= current_user.email %></p>
+
+    
+    </div>
+
     <% else %>
     <%= link_to 'Sign up', new_user_registration_path %>
     <% end %>
