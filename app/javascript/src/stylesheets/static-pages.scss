@@ -1,0 +1,15 @@
+.paddlft { //==============стилі щоб елементи менюшки були в рядок з відступом
+  padding-left: 20px;
+  max-width: 80px;
+  a {
+    color: grey;
+  }
+}
+
+.dropdown-menu {
+  min-width: 6rem;
+}
+
+header {
+  max-height: 90px;
+}
