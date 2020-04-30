@@ -5,11 +5,11 @@
     <div>
       <p>Hello, tankist <%= current_user.email %></p>
 
-    
+
     </div>
 
     <% else %>
-    <%= link_to 'Sign up', new_user_registration_path %>
+    <%= link_to 'Sign up', new_user_registration_path, class:'btn btn-primary' %>
     <% end %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
