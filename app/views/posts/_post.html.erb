@@ -2,19 +2,29 @@
   <%= link_to gravatar_for(post.user, size: 50), post.user %>
   <span class="user"><%= link_to post.user.name, post.user %></span>
   <span class="content">
-    <%= post.title %>
+    <br>
+    <b><em>Title:</em></b> <!-- ne trozh syka, seriy -->
+    <%= post.title %><br>
+
+    <b><em>Content:</em></b> <!-- ce tozhe -->
     <%= post.content %>
   </span>
   <span class="timestamp">
-    Posted <%= time_ago_in_words(post.created_at) %> ago.
+    <p class="normal-text-rght small-text">
+      Posted <%= time_ago_in_words(post.created_at) %> ago.
+    </p>
     <% if logged_in? %>
-      <%= link_to "show", post_path(post) %>
+
+    <div class="center">
+      <%= link_to "Show", post_path(post), class: "btn btn-primary marg-bottom-post" %>
       <% if current_user?(post.user) %>
 
-        <%= link_to "edit", edit_post_path(post) %>
-        <%= link_to "delete", post, method: :delete,
-                                         data: { confirm: "You sure?" } %>
+        <%= link_to "Edit", edit_post_path(post), class: "btn btn-primary marg-bottom-post" %>
+        <%= link_to "Delete", post, method: :delete,
+                                         data: { confirm: "You sure?" }, class: "btn btn-primary marg-bottom-post" %>
       <% end %>
     <% end %>
+    </div>
   </span>
 </li>
+<hr> <!-- bottom line from every post -->

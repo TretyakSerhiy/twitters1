@@ -1,6 +1,7 @@
 <% if logged_in? %>
-  <div class="row">
-    <aside class="col-md-4">
+  <div class="row center">
+    <aside class="col-md-4 jumbotron">
+      <!-- form for make posts -->
       <section class="user_info">
         <%= render 'shared/user_info' %>
       </section>
@@ -11,18 +12,20 @@
         <%= render 'shared/post_form' %>
       </section>
     </aside>
+      <!-- end of form for make posts -->
+
     <div class="col-md-8">
       <h3>Post Feed</h3>
       <%= render 'shared/feed' %>
     </div>
-  </div>
+</div>
 <% else %>
   <div class="center jumbotron"> <!--old classes: mx-auto" style="width: 500px; -->
     <h1>V Barake</h1>
       <p>This is page for tankists!</p>
       <%= link_to "Sign up now!", 'signup', class: "btn btn-lg btn-primary" %>
       <br>
-      <%= link_to image_pack_tag("tank-svgrepo-com.svg", alt: "Rails logo", width: "280px"),
+      <%= link_to image_pack_tag("tank-svgrepo-com.svg", alt: "Rails logo", width: "240px"),
                 'https://worldoftanks.ru' %>
 
   </div>

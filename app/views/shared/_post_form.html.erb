@@ -14,15 +14,15 @@
   <% end %>
   <div class="field">
     <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: 'form-control' %>
   </div>
   <div class="">
     <%= f.label :content %>
-    <%= f.text_area :content %>
+    <%= f.text_area :content, class: 'form-control' %>
   </div>
   <div>
     <%= f.label :image %>
-    <%= f.file_field :image %>
+    <%= f.file_field :image, class: 'form-control' %>
   </div>
     <%= f.submit "Post", class: "btn btn-primary" %>
 <% end %>

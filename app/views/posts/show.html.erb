@@ -1,25 +1,30 @@
-<div class="">
-  <strong>Author:</strong>
-  <%= @post.user.name %>
-</div>
-<div class="">
-  <strong>Title:</strong>
-  <%= @post.title %>
-</div>
-<div class="">
-  <strong>Content:</strong>
-  <%= @post.content %>
-</div>
-<div class="">
-  <strong>Image:</strong>
-   <%= image_tag(@post.image_url) if @post.image? %>
+<div class="jumbotron">
+  <div class="">
+    <strong>Author:</strong>
+    <%= @post.user.name %>
+  </div>
+  <div class="">
+    <strong>Title:</strong>
+    <%= @post.title %>
+  </div>
+  <div class="">
+    <strong>Content:</strong>
+    <%= @post.content %>
+  </div>
+  <div class="">
+    <strong>Image:</strong>
+     <%= image_tag(@post.image_url) if @post.image? %>
+  </div>
 </div>
 
-<h2>Comments</h2>
-<%= render @post.comment %>
-<h2>Add a comment:</h2>
-<%= render 'comments/form' %> 
-<% if current_user?(@post.user) %>
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<% end %>
-<%= link_to 'Back', user_path(@post.user) %>
+  <h2>Comments</h2>
+  <%= render @post.comment %>
+  <h2>Add a comment:</h2>
+  <%= render 'comments/form' %>
+
+  <div class="center">
+    <% if current_user?(@post.user) %>
+      <%= link_to 'Edit', edit_post_path(@post) %> |
+      <% end %>
+      <%= link_to 'Back', user_path(@post.user) %>
+  </div>

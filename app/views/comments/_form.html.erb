@@ -1,13 +1,17 @@
-<%= form_with(model: [ @post, @post.comment.build ], local: true) do |form| %>
-  <p>
-    <%= form.label :commenter %><br>
-    <%= form.text_field :commenter %>
-  </p>
-  <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+<div class="row center">
+  <div class="col-md-6 col-md-offset-3 mx-auto">
+    <%= form_with(model: [ @post, @post.comment.build ], local: true) do |form| %>
+      <p>
+        <%= form.label :commenter %><br>
+        <%= form.text_field :commenter, class: 'form-control' %>
+      </p>
+      <p>
+        <%= form.label :body %><br>
+        <%= form.text_area :body, class: 'form-control' %>
+      </p>
+      <p>
+        <%= form.submit "Create Comment", class: "btn btn-primary" %>
+      </p>
+    <% end %>
+  </div>
+</div>
