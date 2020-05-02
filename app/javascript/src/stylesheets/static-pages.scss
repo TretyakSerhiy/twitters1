@@ -23,5 +23,6 @@ header {
 .d-flex-justify {
   display: flex;
   justify-content: space-between;
-  max-width: 250px;
+  max-width: 300px;
+  flex-wrap: wrap;
 }
