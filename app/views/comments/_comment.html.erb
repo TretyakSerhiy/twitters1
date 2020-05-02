@@ -1,17 +1,17 @@
-<% @post.comment.each do |comment| %>
   <p>
     <strong>Commenter:</strong>
-    <%= current_user.name %>
+    <%= comment.commenter %>
   </p>
 
   <p>
     <strong>Comment:</strong>
-    <%= current_user.name %>
+    <%= comment.body %>
   </p>
 
-  <!-- <p>
-    <%# <%= link_to 'Destroy Comment', [comment.post, comment],
+ <% if current_user?(@post.user) || current_user?(@commenter) %>
+  <p>
+    <%= link_to 'Destroy Comment', [comment.post, comment],
                  method: :delete,
-                 data: { confirm: 'Are you sure?' } %> %>
-  </p> -->
-  <% end %>
+                 data: { confirm: 'Are you sure?' } %>
+  </p>
+ <% end %>

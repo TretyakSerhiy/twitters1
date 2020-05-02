@@ -15,24 +15,30 @@
       </ul>
     </div>
   <% end %>
+  <% if current_user?(@post.user) %>
+    <p>
+      <%= form.label :title %><br>
+      <%= form.text_field :title %>
+    </p>
 
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
+    <p>
+      <%= form.label :content %><br>
+      <%= form.text_area :content %>
+    </p>
 
-  <p>
-    <%= form.label :content %><br>
-    <%= form.text_area :content %>
-  </p>
+    <p>
+      <%= form.label :image %><br>
+      <%= form.file_field :image %>
+    </p>
 
-  <p>
-    <%= form.label :image %><br>
-    <%= form.file_field :image %>
-  </p>
+    <p>
+      <%= form.submit %>
+    </p>
+    |
+    <%= link_to 'Back', post_path(@post) %>
 
-  <p>
-    <%= form.submit %>
-  </p>
 
+  <% else %>
+  <%= link_to 'Create new Post', root_path %>
+  <% end %>
 <% end %>
