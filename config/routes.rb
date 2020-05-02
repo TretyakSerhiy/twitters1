@@ -1,17 +1,18 @@
 Rails.application.routes.draw do
-  devise_for :users
+  get 'password_resets/new'
+  get 'password_resets/edit'
   root 'static_pages#home'
   get 'help'    => 'static_pages#help'
   get 'about'   => 'static_pages#about'
   get 'contact' => 'static_pages#contact'
-  get 'signup'  => 'devise/registrations#new'
-  get 'log_in'  => 'devise/sessions#new'
-  get 'new_post' => 'posts#new'
-  get 'posts'   => 'posts#show'
-  resources :users do
-    resources :posts do
-      resources :comments
-    end
+  get 'signup' => 'users#new'
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
+  resources :users
+  resources :account_activations, only: [:edit]
+  resources :password_resets,     only: [:new, :create, :edit, :update]
+  resources :posts, only: [:show, :edit, :update, :create, :destroy] do
+    resources :comments, only: [:create, :destroy]
   end
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

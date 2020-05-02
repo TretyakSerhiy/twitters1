@@ -10,51 +10,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_29_200228) do
+ActiveRecord::Schema.define(version: 2020_05_01_232049) do
 
   create_table "comments", force: :cascade do |t|
     t.string "commenter"
     t.text "body"
     t.integer "post_id", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["post_id"], name: "index_comments_on_post_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
-    t.text "text"
+    t.text "content"
     t.string "image"
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id", "created_at"], name: "index_posts_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer "sign_in_count", default: 0, null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string "current_sign_in_ip"
-    t.string "last_sign_in_ip"
-    t.string "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string "unconfirmed_email"
-    t.integer "failed_attempts", default: 0, null: false
-    t.string "unlock_token"
-    t.datetime "locked_at"
+    t.string "name"
+    t.string "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "name"
-    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
+    t.string "password_digest"
+    t.string "remember_digest"
+    t.boolean "admin", default: false
+    t.string "activation_digest"
+    t.boolean "activated", default: false
+    t.datetime "activated_at"
+    t.string "reset_digest"
+    t.datetime "reset_sent_at"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
   add_foreign_key "comments", "posts"
+  add_foreign_key "comments", "users"
+  add_foreign_key "posts", "users"
 end

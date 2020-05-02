@@ -1,18 +1,26 @@
-<div class="center jumbotron"> <!--old classes: mx-auto" style="width: 500px; -->
-  <h1>V Barake</h1>
-    <p>This is page for tankists!</p>
-    <% if user_signed_in? %>
-    <div>
-      <p>Hello, tankist <%= current_user.email %></p>
-
-
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="post_form">
+        <%= render 'shared/post_form' %>
+      </section>
+    </aside>
+    <div class="col-md-8">
+      <h3>Post Feed</h3>
+      <%= render 'shared/feed' %>
     </div>
+  </div>
+<% else %>
+  <div class="center jumbotron"> <!--old classes: mx-auto" style="width: 500px; -->
+    <h1>V Barake</h1>
+      <p>This is page for tankists!</p>
+      <%= link_to "Sign up now!", 'signup', class: "btn btn-lg btn-primary" %>
+      <br>
+      <%= link_to image_pack_tag("tank-svgrepo-com.svg", alt: "Rails logo", width: "280px"),
+                'https://worldoftanks.ru' %>
 
-    <% else %>
-    <%= link_to 'Sign up', new_user_registration_path, class:'btn btn-primary' %>
-    <% end %>
-    <!-- <p class="notice">
-      <%# <%= notice %> %>
-    </p> -->
-    <p class="alert"><%= alert %></p>
-</div>
+  </div>
+<% end %>

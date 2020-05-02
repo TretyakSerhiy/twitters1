@@ -1,20 +1,21 @@
-<p>
+<div class="">
+  <strong>Author:</strong>
+  <%= @post.user.name %>
+</div>
+<div class="">
   <strong>Title:</strong>
   <%= @post.title %>
-</p>
-
-<p>
-  <strong>Text:</strong>
-  <%= @post.text %>
-</p>
-
-<p>
+</div>
+<div class="">
+  <strong>Content:</strong>
+  <%= @post.content %>
+</div>
+<div class="">
   <strong>Image:</strong>
-  <%= @post.image %>
-</p>
+   <%= image_tag(@post.image_url) if @post.image? %>
+</div>
 
 <h2>Comments</h2>
-<%= render @post.comments %>
-
-<h2>Add a comment:</h2>
-<%= render 'comments/form' %>
+<%= render @post.comment %>
+<!-- <h2>Add a comment:</h2>
+<%# <%= render 'comments/form' %> --> 
