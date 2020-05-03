@@ -3,12 +3,17 @@
 <% provide(:button_text, 'Save changes') %>
 <h1>Update your profile</h1>
 
-<div class="row center">
+<div class="row  center">
   <div class="col-md-6 col-md-offset-3 mx-auto">
     <%= render 'form' %>
     <div class="gravatar_edit">
+      <p class="center mx-auto center-img">
       <%= gravatar_for @user %>
-      <a href="http://gravatar.com/emails" target="_blank">change</a>
+      </p> <br><br><br><br> <!-- da, ce puzda, zato rabota... -->
+      <a href="http://gravatar.com/emails" target="_blank" class = "btn btn-primary small-text">
+        Change avatar
+      </a> <!--eto pomenyat nado change-->
+
     </div>
   </div>
 </div>

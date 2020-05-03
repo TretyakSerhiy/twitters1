@@ -4,16 +4,18 @@
     <%= comment.commenter %>
   </p>
 
+<div class="jumbotron comment-text-box"> <!-- text-comment-box -->
   <p>
     <strong>Comment:</strong>
     <%= comment.body %>
   </p>
-
+ 
  <% if current_user?(@post.user) || current_user?(@commenter) %>
-  <p>
+  <p class="right-elem">
     <%= link_to 'Destroy Comment', [comment.post, comment],
                  method: :delete,
-                 data: { confirm: 'Are you sure?' } %>
+                 data: { confirm: 'Are you sure?' }, class: "btn btn-primary small-text" %>
   </p>
  <% end %>
+ </div>
 <hr> <!--line in bottom from comments-->

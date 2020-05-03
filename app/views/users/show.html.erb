@@ -1,9 +1,10 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-  <aside class="col-md-4">
-    <section>
-      <h1>
+  <aside class="col-md-4 mx-auto jumbotron center height-aside-profile">
+    <section class=""> <!--jumbotron center mx-auto === center mx-auto-->
+      <h1 class="">
         <%= gravatar_for @user %>
+        <br>
         <%= @user.name %>
       </h1>
     </section>
@@ -14,8 +15,8 @@
   <div class="col-md-8">
     <%= render 'follow_form' if logged_in? %>
     <% if @user.posts.any? %>
-      <h3>Posts (<%= @user.posts.count %>)</h3>
-      <ol class="posts">
+      <h3 class="center">Posts (<%= @user.posts.count %>)</h3>
+      <ol class="posts jumbotron">
         <%= render @posts %>
       </ol>
       <%= will_paginate @posts %>
