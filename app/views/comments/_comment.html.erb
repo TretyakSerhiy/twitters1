@@ -1,7 +1,7 @@
 
   <p>
     <strong>Commenter:</strong>
-    <%= comment.commenter %>
+    <%= link_to comment.user.name, user_path(comment.user_id) %>
   </p>
 
 <div class="jumbotron comment-text-box"> <!-- text-comment-box -->
@@ -9,8 +9,8 @@
     <strong>Comment:</strong>
     <%= comment.body %>
   </p>
- 
- <% if current_user?(@post.user) || current_user?(@commenter) %>
+
+ <% if current_user?(@post.user) || current_user?(comment.user) %>
   <p class="right-elem">
     <%= link_to 'Destroy Comment', [comment.post, comment],
                  method: :delete,
