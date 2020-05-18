@@ -12,7 +12,7 @@ gem 'device'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', '4.2.2'
+gem 'webpacker', '~> 4.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -20,17 +20,17 @@ gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
  gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
-gem 'carrierwave', '2.1.0'
-gem 'sdoc', '1.1.0'
+gem 'carrierwave'
+gem 'sdoc'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'bcrypt', '~> 3.1.7'
-gem 'mini_magick', '4.10.1'
-gem 'faker',    '2.11.0'
+gem 'mini_magick'
+gem 'faker'
 gem 'fog',                     '1.36.0'
-gem 'will_paginate',  '3.3.0'
-gem 'bootstrap-will_paginate', '1.0.0'
-gem 'bootstrap-sass',    '3.4.1'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
+gem 'bootstrap-sass'
 gem 'uglifier'
 # Use Active Storage variant
  gem 'image_processing', '~> 1.2'
@@ -39,14 +39,14 @@ gem 'uglifier'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :production do
-  gem 'pg', '1.2.3'
-  gem 'rails_12factor', '0.0.3'
+  gem 'pg'
+  gem 'rails_12factor'
   gem 'puma', '~> 4.1'
 end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'sqlite3', '1.4.2'
+  gem 'sqlite3'
 end
 group :development do
   gem 'letter_opener'
