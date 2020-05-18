@@ -27,7 +27,7 @@ gem 'jquery-rails'
 gem 'bcrypt', '~> 3.1.7'
 gem 'mini_magick'
 gem 'faker'
-gem 'fog',                     '1.36.0'
+gem 'fog'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'bootstrap-sass'
@@ -41,7 +41,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :production do
   gem 'pg'
   gem 'rails_12factor'
-  gem 'puma', '~> 4.1'
+  gem 'puma'
 end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
